@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="RestoranSet" EntityType="Model1.Store.RestoranSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MusteriSet" EntityType="Model1.Store.MusteriSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UrunSet" EntityType="Model1.Store.UrunSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SiparisSet" EntityType="Model1.Store.SiparisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RestoranMusteri" EntityType="Model1.Store.RestoranMusteri" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="RestoranSiparis" Association="Model1.Store.RestoranSiparis">
+      <End Role="Restoran" EntitySet="RestoranSet" />
+      <End Role="Siparis" EntitySet="SiparisSet" />
+    </AssociationSet>
+    <AssociationSet Name="MusteriSiparis" Association="Model1.Store.MusteriSiparis">
+      <End Role="Musteri" EntitySet="MusteriSet" />
+      <End Role="Siparis" EntitySet="SiparisSet" />
+    </AssociationSet>
+    <AssociationSet Name="RestoranUrun" Association="Model1.Store.RestoranUrun">
+      <End Role="Restoran" EntitySet="RestoranSet" />
+      <End Role="Urun" EntitySet="UrunSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestoranMusteri_Restoran" Association="Model1.Store.FK_RestoranMusteri_Restoran">
+      <End Role="Restoran" EntitySet="RestoranSet" />
+      <End Role="RestoranMusteri" EntitySet="RestoranMusteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestoranMusteri_Musteri" Association="Model1.Store.FK_RestoranMusteri_Musteri">
+      <End Role="Musteri" EntitySet="MusteriSet" />
+      <End Role="RestoranMusteri" EntitySet="RestoranMusteri" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RestoranSet">
+    <Key>
+      <PropertyRef Name="RestoranID" />
+    </Key>
+    <Property Name="RestoranID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="restoranName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="restoranAdress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="restoranSalary" Type="decimal" Nullable="false" />
+    <Property Name="restoranPhone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MusteriSet">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="musteriName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="musteriPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="musteriBudget" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="musteriAdress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RestoranID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UrunSet">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="urunPrice" Type="decimal" Nullable="false" />
+    <Property Name="urunType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RestoranID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SiparisSet">
+    <Key>
+      <PropertyRef Name="SiparisID" />
+    </Key>
+    <Property Name="SiparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="siparisPrice" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RestoranID" Type="int" Nullable="false" />
+    <Property Name="MusteriID" Type="int" Nullable="false" />
+    <Property Name="urunCount" Type="int" Nullable="false" />
+    <Property Name="urunSecim" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RestoranMusteri">
+    <Key>
+      <PropertyRef Name="RestoranMusteri_Musteri_RestoranID" />
+      <PropertyRef Name="RestoranMusteri_Restoran_MusteriID" />
+    </Key>
+    <Property Name="RestoranMusteri_Musteri_RestoranID" Type="int" Nullable="false" />
+    <Property Name="RestoranMusteri_Restoran_MusteriID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="RestoranSiparis">
+    <End Role="Restoran" Type="Model1.Store.RestoranSet" Multiplicity="1" />
+    <End Role="Siparis" Type="Model1.Store.SiparisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restoran">
+        <PropertyRef Name="RestoranID" />
+      </Principal>
+      <Dependent Role="Siparis">
+        <PropertyRef Name="RestoranID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MusteriSiparis">
+    <End Role="Musteri" Type="Model1.Store.MusteriSet" Multiplicity="1" />
+    <End Role="Siparis" Type="Model1.Store.SiparisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musteri">
+        <PropertyRef Name="MusteriID" />
+      </Principal>
+      <Dependent Role="Siparis">
+        <PropertyRef Name="MusteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RestoranUrun">
+    <End Role="Restoran" Type="Model1.Store.RestoranSet" Multiplicity="1" />
+    <End Role="Urun" Type="Model1.Store.UrunSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restoran">
+        <PropertyRef Name="RestoranID" />
+      </Principal>
+      <Dependent Role="Urun">
+        <PropertyRef Name="RestoranID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RestoranMusteri_Restoran">
+    <End Role="Restoran" Type="Model1.Store.RestoranSet" Multiplicity="1" />
+    <End Role="RestoranMusteri" Type="Model1.Store.RestoranMusteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restoran">
+        <PropertyRef Name="RestoranID" />
+      </Principal>
+      <Dependent Role="RestoranMusteri">
+        <PropertyRef Name="RestoranMusteri_Musteri_RestoranID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RestoranMusteri_Musteri">
+    <End Role="RestoranMusteri" Type="Model1.Store.RestoranMusteri" Multiplicity="*" />
+    <End Role="Musteri" Type="Model1.Store.MusteriSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Musteri">
+        <PropertyRef Name="MusteriID" />
+      </Principal>
+      <Dependent Role="RestoranMusteri">
+        <PropertyRef Name="RestoranMusteri_Restoran_MusteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RestoranSet" EntityType="Model1.Restoran" />
+          <EntitySet Name="MusteriSet" EntityType="Model1.Musteri" />
+          <EntitySet Name="UrunSet" EntityType="Model1.Urun" />
+          <EntitySet Name="SiparisSet" EntityType="Model1.Siparis" />
+          <AssociationSet Name="RestoranSiparis" Association="Model1.RestoranSiparis">
+            <End Role="Restoran" EntitySet="RestoranSet" />
+            <End Role="Siparis" EntitySet="SiparisSet" />
+          </AssociationSet>
+          <AssociationSet Name="MusteriSiparis" Association="Model1.MusteriSiparis">
+            <End Role="Musteri" EntitySet="MusteriSet" />
+            <End Role="Siparis" EntitySet="SiparisSet" />
+          </AssociationSet>
+          <AssociationSet Name="RestoranUrun" Association="Model1.RestoranUrun">
+            <End Role="Restoran" EntitySet="RestoranSet" />
+            <End Role="Urun" EntitySet="UrunSet" />
+          </AssociationSet>
+          <AssociationSet Name="RestoranMusteri" Association="Model1.RestoranMusteri">
+            <End Role="Restoran" EntitySet="RestoranSet" />
+            <End Role="Musteri" EntitySet="MusteriSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Restoran">
+          <Key>
+            <PropertyRef Name="RestoranID" />
+          </Key>
+          <Property Name="RestoranID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restoranName" Type="String" Nullable="false" />
+          <Property Name="restoranAdress" Type="String" Nullable="false" />
+          <Property Name="restoranSalary" Type="Decimal" Nullable="false" />
+          <Property Name="restoranPhone" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musteriName" Type="String" Nullable="false" />
+          <Property Name="musteriPhone" Type="String" Nullable="false" />
+          <Property Name="musteriBudget" Type="String" Nullable="false" />
+          <Property Name="musteriAdress" Type="String" Nullable="false" />
+          <Property Name="RestoranID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunName" Type="String" Nullable="false" />
+          <Property Name="urunPrice" Type="Decimal" Nullable="false" />
+          <Property Name="urunType" Type="String" Nullable="false" />
+          <Property Name="RestoranID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Siparis">
+          <Key>
+            <PropertyRef Name="SiparisID" />
+          </Key>
+          <Property Name="SiparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siparisPrice" Type="String" Nullable="false" />
+          <Property Name="RestoranID" Type="Int32" Nullable="false" />
+          <Property Name="MusteriID" Type="Int32" Nullable="false" />
+          <Property Name="urunCount" Type="Int32" Nullable="false" />
+          <Property Name="urunSecim" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="RestoranSiparis">
+          <End Type="Model1.Restoran" Role="Restoran" Multiplicity="1" />
+          <End Type="Model1.Siparis" Role="Siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restoran">
+              <PropertyRef Name="RestoranID" />
+            </Principal>
+            <Dependent Role="Siparis">
+              <PropertyRef Name="RestoranID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MusteriSiparis">
+          <End Type="Model1.Musteri" Role="Musteri" Multiplicity="1" />
+          <End Type="Model1.Siparis" Role="Siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteri">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="Siparis">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RestoranUrun">
+          <End Type="Model1.Restoran" Role="Restoran" Multiplicity="1" />
+          <End Type="Model1.Urun" Role="Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restoran">
+              <PropertyRef Name="RestoranID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="RestoranID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RestoranMusteri">
+          <End Type="Model1.Restoran" Role="Restoran" Multiplicity="*" />
+          <End Type="Model1.Musteri" Role="Musteri" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="RestoranSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Restoran)">
+        <MappingFragment StoreEntitySet="RestoranSet">
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="restoranName" ColumnName="restoranName" />
+          <ScalarProperty Name="restoranAdress" ColumnName="restoranAdress" />
+          <ScalarProperty Name="restoranSalary" ColumnName="restoranSalary" />
+          <ScalarProperty Name="restoranPhone" ColumnName="restoranPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusteriSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Musteri)">
+        <MappingFragment StoreEntitySet="MusteriSet">
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="musteriName" ColumnName="musteriName" />
+          <ScalarProperty Name="musteriPhone" ColumnName="musteriPhone" />
+          <ScalarProperty Name="musteriBudget" ColumnName="musteriBudget" />
+          <ScalarProperty Name="musteriAdress" ColumnName="musteriAdress" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Urun)">
+        <MappingFragment StoreEntitySet="UrunSet">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="urunName" ColumnName="urunName" />
+          <ScalarProperty Name="urunPrice" ColumnName="urunPrice" />
+          <ScalarProperty Name="urunType" ColumnName="urunType" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiparisSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Siparis)">
+        <MappingFragment StoreEntitySet="SiparisSet">
+          <ScalarProperty Name="SiparisID" ColumnName="SiparisID" />
+          <ScalarProperty Name="siparisPrice" ColumnName="siparisPrice" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="urunCount" ColumnName="urunCount" />
+          <ScalarProperty Name="urunSecim" ColumnName="urunSecim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RestoranMusteri" TypeName="Model1.RestoranMusteri" StoreEntitySet="RestoranMusteri">
+      <EndProperty Name="Restoran">
+        <ScalarProperty Name="RestoranID" ColumnName="RestoranMusteri_Musteri_RestoranID" />
+      </EndProperty>
+      <EndProperty Name="Musteri">
+        <ScalarProperty Name="MusteriID" ColumnName="RestoranMusteri_Restoran_MusteriID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

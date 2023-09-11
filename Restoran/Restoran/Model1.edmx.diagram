@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52badd8eeda64848be8de9f26ac6ff2b" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.Restoran" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Musteri" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="Model1.Urun" Width="1.5" PointX="1.375" PointY="2.625" />
+        <EntityTypeShape EntityType="Model1.Siparis" Width="1.5" PointX="3.875" PointY="0.5" />
+        <AssociationConnector Association="Model1.RestoranSiparis" />
+        <AssociationConnector Association="Model1.MusteriSiparis" />
+        <AssociationConnector Association="Model1.RestoranUrun" />
+        <AssociationConnector Association="Model1.RestoranMusteri" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

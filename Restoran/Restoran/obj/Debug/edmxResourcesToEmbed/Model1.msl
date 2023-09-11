@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="RestoranSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Restoran)">
+        <MappingFragment StoreEntitySet="RestoranSet">
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="restoranName" ColumnName="restoranName" />
+          <ScalarProperty Name="restoranAdress" ColumnName="restoranAdress" />
+          <ScalarProperty Name="restoranSalary" ColumnName="restoranSalary" />
+          <ScalarProperty Name="restoranPhone" ColumnName="restoranPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusteriSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Musteri)">
+        <MappingFragment StoreEntitySet="MusteriSet">
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="musteriName" ColumnName="musteriName" />
+          <ScalarProperty Name="musteriPhone" ColumnName="musteriPhone" />
+          <ScalarProperty Name="musteriBudget" ColumnName="musteriBudget" />
+          <ScalarProperty Name="musteriAdress" ColumnName="musteriAdress" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Urun)">
+        <MappingFragment StoreEntitySet="UrunSet">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="urunName" ColumnName="urunName" />
+          <ScalarProperty Name="urunPrice" ColumnName="urunPrice" />
+          <ScalarProperty Name="urunType" ColumnName="urunType" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiparisSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Siparis)">
+        <MappingFragment StoreEntitySet="SiparisSet">
+          <ScalarProperty Name="SiparisID" ColumnName="SiparisID" />
+          <ScalarProperty Name="siparisPrice" ColumnName="siparisPrice" />
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="urunCount" ColumnName="urunCount" />
+          <ScalarProperty Name="urunSecim" ColumnName="urunSecim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RestoranMusteri" TypeName="Model1.RestoranMusteri" StoreEntitySet="RestoranMusteri">
+      <EndProperty Name="Restoran">
+        <ScalarProperty Name="RestoranID" ColumnName="RestoranMusteri_Musteri_RestoranID" />
+      </EndProperty>
+      <EndProperty Name="Musteri">
+        <ScalarProperty Name="MusteriID" ColumnName="RestoranMusteri_Restoran_MusteriID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,47 @@
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.csproj.AssemblyReference.cache
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.csproj.SuggestedBindingRedirects.cache
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Form1.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.InterfacePagee.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.MakeAnOrder.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.MusteriRegister.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Orders.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Products.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Properties.Resources.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.csproj.GenerateResource.cache
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.csproj.CoreCompileInputs.cache
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\Restoran.exe.config
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\Restoran.exe
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\Restoran.pdb
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\EntityFramework.dll
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\EntityFramework.xml
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.csproj.CopyComplete
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.exe
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.pdb
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Customer.resources
+C:\Users\BRIGHT\Desktop\konsol örnekleri\Restoran\Restoran\obj\Debug\Restoran.Restaurants.resources
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\Restoran.exe.config
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\Restoran.exe
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\Restoran.pdb
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\EntityFramework.dll
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\EntityFramework.xml
+C:\Users\pc\Desktop\Restoran\Restoran\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Customer.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Form1.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.InterfacePagee.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.MakeAnOrder.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.MusteriRegister.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Orders.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Products.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Properties.Resources.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Restaurants.resources
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.csproj.CopyComplete
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.exe
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.pdb
+C:\Users\pc\Desktop\Restoran\Restoran\obj\Debug\Restoran.Reports.resources
